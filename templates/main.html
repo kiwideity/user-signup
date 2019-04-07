@@ -1,0 +1,32 @@
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}    
+    
+    <h1>User Sign-up</h1>
+    
+    <form method='POST'>
+        <label><span class="container">Username</span>
+            <input name="username" type="text" value='{{username}}' />
+        </label>
+        <p class="error">{{username_error}} &nbsp;</p>
+        <label><span class="container">Password</span>
+            <input name="password" type="password" value='{{password}}' />
+        </label>
+        <p class="error">{{password_error}} &nbsp;</p>
+        <label><span class="container">Password Validate</span>
+            <input name="password_validate" type="password" value='{{password_validate}}' />
+        </label>
+        <p class="error">{{password_validate_error}} &nbsp;</p>
+        <label><span class="container">E-mail (optional)</span>
+            <input name="email" type="text" value='{{email}}' />
+        </label>
+        <p class="submit">{{email_error}} &nbsp;</p>
+        <input class="submit" type="submit" value="Submit" />
+    </form>
+
+{% endblock %}  
